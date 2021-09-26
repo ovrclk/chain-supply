@@ -1,0 +1,24 @@
+name: publish
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "~1.16"
+      - name: build
+        run: |
+          go build .
+      - name: release
+        run: |
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
+          docker build . --tag ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/}
+          docker tag ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/} ghcr.io/ovrclk/${{github.repository}}:latest
+          docker push ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/}
+          docker push ghcr.io/ovrclk/${{github.repository}}:latest
