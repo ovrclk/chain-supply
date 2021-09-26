@@ -18,7 +18,7 @@ jobs:
       - name: release
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
-          docker build . --tag ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/}
-          docker tag ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/} ghcr.io/ovrclk/${{github.repository}}:latest
-          docker push ghcr.io/ovrclk/${{github.repository}}:${GITHUB_REF#refs/tags/}
-          docker push ghcr.io/ovrclk/${{github.repository}}:latest
+          docker build . --tag ghcr.io/${{github.repository}}:${GITHUB_REF#refs/tags/}
+          docker tag ghcr.io/${{github.repository}}:${GITHUB_REF#refs/tags/} ghcr.io/${{github.repository}}:latest
+          docker push ghcr.io/${{github.repository}}:${GITHUB_REF#refs/tags/}
+          docker push ghcr.io/${{github.repository}}:latest
