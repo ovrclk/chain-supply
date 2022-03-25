@@ -1,4 +1,4 @@
-FROM ubuntu:20.10
+FROM ubuntu:22.04
 
 LABEL org.opencontainers.image.source https://github.com/ovrclk/chain-supply
 
