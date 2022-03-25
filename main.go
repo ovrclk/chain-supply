@@ -43,7 +43,7 @@ func main() {
 	var cli struct {
 		Node   string `help:"RPC URI" default:"https://rpc.prod.ewr1.akash.farm:443/token/PHAH3PAI/"`
 		Denom  string `help:"Denomination" default:"uakt"`
-		Locked string `help:"Locked token amount" default:"49002255000000"`
+		Locked string `help:"Locked token amount" default:"28903382000000"`
 
 		Show   showCmd   `cmd help:"Show summary" default:"1"`
 		Server serverCmd `cmd help:"Run server"`
