@@ -12,8 +12,7 @@ import (
 )
 
 const (
-	denom   = "uakt"
-	rpcNode = "http://135.181.60.250:26657"
+	denom = "uakt"
 )
 
 type runctx struct {
