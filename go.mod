@@ -10,6 +10,14 @@ require (
 	github.com/tendermint/tendermint v0.34.27
 )
 
+replace (
+	github.com/btcsuite/btcd => github.com/btcsuite/btcd v0.24.2
+	github.com/cosmos/cosmos-sdk => github.com/akash-network/cosmos-sdk v0.45.16-akash.3
+	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
+	github.com/tendermint/tendermint => github.com/akash-network/cometbft v0.34.27-akash.3
+	google.golang.org/grpc => google.golang.org/grpc v1.33.2
+)
+
 require (
 	cosmossdk.io/api v0.2.6 // indirect
 	cosmossdk.io/core v0.5.1 // indirect
@@ -121,13 +129,3 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-
-replace google.golang.org/grpc => google.golang.org/grpc v1.33.2
-
-replace github.com/cosmos/cosmos-sdk => github.com/akash-network/cosmos-sdk v0.45.16-akash.3
-
-replace github.com/tendermint/tendermint => github.com/akash-network/cometbft v0.34.27-akash.3
-
-replace github.com/btcsuite/btcd => github.com/btcsuite/btcd v0.24.2
